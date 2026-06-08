@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="../styles/config.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+</head>
+<body>
+    <aside class="nav-container">
+        <div class="titulo">
+            <h1>Configurações</h1>
+        </div>
+        <a id="btn-gerenciador" href="#" class="opcoes">
+            Gerenciador de usuários
+        </a>
+    </aside>
+
+    <main class="conteudo">
+        <div class="inicio" id="inicio">
+            <h1>Bem-vindo à sua central de Configurações!</h1>
+        </div>
+
+        <div class="hidden" id="gerenciador">
+            <h1>Gerenciador de Usuários</h1>
+
+            <div class="usuarios" id="usuarios"></div>
+        </div>
+        
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="../controllers/GerenciadorController.js" defer></script>
+
+</body>
+</html>

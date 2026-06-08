@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tem de Tudo um pouco!</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+</head>
+<body>
+
+    <div class="header-container">
+        
+        <div class="nav-btn">
+            
+            <div id="area-deslogado">
+                <a href="./login.html">
+                    <button class="btn-login">Logar / Cadastrar</button>
+                </a>
+            </div>
+
+            <div id="area-adm" class="usuario-info hidden">
+                <span id="bem-vindo">Olá, Usuário</span>
+                <a href="./config.html" class="link-usuario">Configurações ADM</a>
+                <a href="./anunciar.html" class="link-usuario">Anunciar Produto</a>
+                <button id="btn-sairADM" class="btn-sair">Sair</button>
+            </div>
+
+            <div id="area-usuario" class="usuario-info hidden">
+                <span id="bem-vindo">Olá, Usuário</span>
+                <button id="btn-sair" class="btn-sair">Sair</button>
+            </div>
+
+        </div>
+
+        <div class="img-Logo">
+            <img src="../../public/logo.png" style="height: 150px;">
+        </div>
+        <div class="nav-inicio">
+            <h1 class="titulo">Tem de Tudo!</h1>
+            <div class="pesquisa-princ">
+                <input class="pesquisa" type="text" placeholder="O que você está procurando hoje?">
+            </div>
+        </div>
+    </div>
+        <nav class="menu-container">
+            <ul class="menu-principal">
+                <li><a href="#">Início</a></li>  
+            <li class="dropdown">
+                <span class="btn-expansivel">Informática e Computação ▼</span>
+                <ul class="sub-menu">
+                    <li><a href="#">Notebooks e Laptops</a></li>
+                    <li><a href="#">Computadores Desktop</a></li>
+                    <li><a href="#">Componentes e Hardware</a></li>
+                    <li><a href="#">Periféricos</a></li>
+                    <li><a href="#">Monitores</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <span class="btn-expansivel">Smartphones e Conectividade ▼</span>
+                <ul class="sub-menu">
+                    <li><a href="#">Celulares e Smartphones</a></li>
+                    <li><a href="#">Smartwatches e Wearables</a></li>
+                    <li><a href="#">Acessórios para Celular</a></li>
+                    <li><a href="#">Redes e Wi-Fi</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <span class="btn-expansivel">Áudio e Vídeo ▼</span>
+                <ul class="sub-menu">
+                    <li><a href="#">Televisores</a></li>
+                    <li><a href="#">Áudio Portátil e Fones</a></li>
+                    <li><a href="#">Home Cinema</a></li>
+                    <li><a href="#">Streaming e TV Box</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <span class="btn-expansivel">Universo Gamer ▼</span>
+                <ul class="sub-menu">
+                    <li><a href="#">Consoles</a></li>
+                    <li><a href="#">Jogos (Mídia Física)</a></li>
+                    <li><a href="#">Acessórios para Console</a></li>
+                    <li><a href="#">Mobiliário Gamer</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <span class="btn-expansivel">Casa Inteligente ▼</span>
+                <ul class="sub-menu">
+                    <li><a href="#">Assistentes Virtuais</a></li>
+                    <li><a href="#">Iluminação Inteligente</a></li>
+                    <li><a href="#">Segurança Residencial</a></li>
+                </ul>
+            </li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="../controllers/HomeController.js" defer></script>
+
+</body>
+</html>

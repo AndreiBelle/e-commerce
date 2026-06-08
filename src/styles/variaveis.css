@@ -1,0 +1,10 @@
+:root {
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --cor-letras: #5480be;
+    --cor-letras-select: #475569;
+    --cor-fundo: #ececec;
+    --cor-cabecalho: #ffffff;
+    --btn-cor-fundo: #e1efff;
+    --btn-color: #003d8d;
+    --btnCancel-color: #64748b;
+}
