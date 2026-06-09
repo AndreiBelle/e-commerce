@@ -2,24 +2,20 @@ import {dbProdutos} from "../database/db.js";
 
 const GerenProdutos = {
     
-    CadastrarProduto: async (titulo, valor, descricao, imagemUrl, categoria, quantidade) => {
+    CadastrarProduto: async (titulo, valor, descricao, imagemUrl, categoria) => {
         try {
-            function criaProduto(id) {
-                id = 0;
-                id++
-                const produto = {
-                    _id: id, 
-                    tipo: "produto", 
-                    titulo: titulo,
-                    valor: valor,
-                    descricao: descricao,
-                    imagem: imagemUrl,
-                    categoria: categoria, 
-                };
-                return produto
-            } 
+            
+            const produto = {
+                _id: "prod_" + Date.now(), 
+                tipo: "produto", 
+                titulo: titulo,
+                valor: valor,
+                descricao: descricao,
+                imagem: imagemUrl,
+                categoria: categoria, 
+            };
 
-            await db.put(criaProduto(id));
+            await dbProdutos.put(produto);
 
             return { ok: true, mensagem: "Produto publicado com sucesso na loja!" };
 
@@ -29,6 +25,16 @@ const GerenProdutos = {
         }
     },
 
+    buscarTodos: async () => {
+        try {
+            const resultado = await dbProdutos.allDocs({ include_docs: true });
+        return resultado;
+
+        } catch (erro) {
+            console.error("Erro ao buscar produtos:", erro);
+            return []; 
+        }
+    },
 
     BuscarPorCategoria: async (categoriaClicada) => {
         try {

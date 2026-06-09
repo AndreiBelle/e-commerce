@@ -6,6 +6,18 @@ const inicio = document.getElementById("inicio");
 const gerenciador = document.getElementById("gerenciador");
 const btn_gerenciador = document.getElementById('btn-gerenciador');
 
+const isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
+
+if (!isAdmin) {
+    
+    toast("Acesso negado. Você não tem permissão para acessar esta página.", "erro");
+    
+    setTimeout(() => {
+        window.location.replace("../views/index.html");
+    }, 1500); 
+
+}
+
 async function listarTodos() {
     try {
         const dados = await GerenUsuarios.listarUsuarios();

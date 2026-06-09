@@ -155,7 +155,7 @@ body {
 
 .menu-principal>li {
     position: relative;
-    padding: 15px 0;
+    padding: 15px;
 }
 
 .menu-principal a {
@@ -166,51 +166,8 @@ body {
     transition: color 0.2s;
 }
 
-.menu-principal>li:hover>a,
-.btn-expansivel:hover {
+.menu-principal a:hover {
     color: #3b82f6;
-}
-
-.sub-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    list-style: none;
-    background-color: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 12px;
-    width: 220px;
-    z-index: 1000;
-    border: 1px solid #e2e8f0;
-}
-
-.dropdown:hover .sub-menu,
-.sub-menu.ativa {
-    display: block;
-}
-
-.sub-menu li {
-    width: 100%;
-}
-
-.sub-menu li a {
-    display: block;
-    padding: 8px 12px;
-    font-weight: 500;
-    color: #64748b;
-    border-radius: 6px;
-}
-
-.sub-menu li a:hover {
-    background-color: #f1f5f9;
-    color: #000000;
-}
-
-.btn-expansivel {
-    cursor: pointer;
 }
 
 .header-container img {
