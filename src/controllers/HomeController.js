@@ -4,7 +4,8 @@ import { toast } from "../utils/notificacao.js";
 const areaDeslogado = document.getElementById("area-deslogado");
 const areaLogadoAdm = document.getElementById("area-adm");
 const areaLogadoUser = document.getElementById("area-usuario");
-const textoUsuario = document.getElementById("bem-vindo");
+const textoAdm = document.getElementById("bem-vindo");
+const textoUsuario = document.getElementById("bem-vindo-user");
 const btnSairADM = document.getElementById("btn-sairADM")
 const btnSair = document.getElementById("btn-sair");
 const botoesExpansiveis = document.querySelectorAll('.btn-expansivel');
@@ -22,9 +23,10 @@ function gerenciarEstadoLogin() {
         try {
             const usuario = JSON.parse(dadosUsuarioString);
             const isAdmin = JSON.parse(dadosIsAdmin); 
-            const nomeExibicao = usuario.usuario.usuario || "";
+            const nomeExibicao = usuario.usuario || "NÃO ENCONTRADO";
 
-            if (textoUsuario) {
+            if (textoAdm || textoUsuario) {
+                textoAdm.textContent = `Olá, ${nomeExibicao} 👋`;
                 textoUsuario.textContent = `Olá, ${nomeExibicao} 👋`;
             }
 

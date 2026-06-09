@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Criar Anúncio</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="../styles/anunciar.css">
+
+    </head>
+<body>
+
+    <main class="container-cadastro-produto">
+        
+        <h2>Cadastrar Novo Produto na Loja</h2>
+
+        <form id="form-produto">
+
+            <div class="grupo-input">
+                <label for="titulo">Nome do Produto *</label>
+                <input type="text" id="titulo" required placeholder="Ex: Smartphone Samsung Galaxy S23">
+            </div>
+
+            <div class="grupo-input">
+                <label for="valor">Preço de Venda (R$) *</label>
+                <input type="number" id="valor" step="0.01" min="0" required placeholder="0.00">
+            </div>
+
+            <div class="grupo-input">
+                <label for="quantidade">Quantidade em Estoque *</label>
+                <input type="number" id="quantidade" min="1" required placeholder="Ex: 5">
+            </div>
+
+            <div class="grupo-input">
+                <label for="categoria">Categoria do Produto *</label>
+                <select id="categoria" required>
+                    <option value="" disabled selected>Escolha uma categoria...</option>
+                    
+                    <option value="Informática">Informática e Computação</option>
+                    <option value="Smartphones">Smartphones e Conectividade</option>
+                    <option value="Áudio e Vídeo">Áudio e Vídeo</option>
+                    <option value="Universo Gamer">Universo Gamer</option>
+                    <option value="Casa Inteligente">Casa Inteligente</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label for="imagemUrl">Link da Imagem (URL) *</label>
+                <input type="url" id="imagemUrl" required placeholder="https://site.com/foto-do-produto.jpg">
+            </div>
+
+            <div class="grupo-input">
+                <label for="descricao">Descrição Completa</label>
+                <textarea id="descricao" rows="5" placeholder="Descreva os detalhes técnicos e diferenciais do produto..."></textarea>
+            </div>
+
+            <div class="grupo-botoes">
+                <button type="submit" id="btn-salvar">Publicar Anúncio</button>
+                <a href="../views/index.html">
+                    <button type="button" class="btn-cancel">
+                        Cancelar
+                    </button>
+                    </a>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="../controllers/ProdutoController.js"></script>
+
+</body>
+</html>

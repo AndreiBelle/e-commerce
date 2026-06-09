@@ -1,0 +1,115 @@
+@import "./variaveis.css";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-cabecalho);
+    font-family: var(--font-family);
+}
+
+.container-cadastro-produto {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.area-conteudo {
+    width: 100%;
+}
+
+.area-conteudo h2 {
+    color: var(--cor-letras);
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#form-produto {
+    background-color: var(--cor-cabecalho);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 50px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-input label {
+    color: var(--cor-letras-select);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.grupo-input input,
+.grupo-input select,
+.grupo-input textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    color: var(--cor-letras-select);
+    background-color: var(--cor-cabecalho);
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+    font-family: var(--font-family);
+}
+
+.grupo-input input:focus,
+.grupo-input select:focus,
+.grupo-input textarea:focus {
+    border-color: var(--cor-letras);
+}
+
+.grupo-input textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.linha-inteira {
+    grid-column: 1 / -1;
+}
+
+#btn-salvar {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: var(--btn-cor-fundo);
+    color: var(--btn-color);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#btn-salvar:hover {
+    background-color: var(--btn-color);
+    color: var(--cor-cabecalho);
+}
+
+.btn-cancel {
+    width: 100%;
+    background-color: var(--btn-cor-fundo);
+    color: var(--btnCancel-color);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.grupo-botoes {
+    grid-column: 1 / -1;
+}
