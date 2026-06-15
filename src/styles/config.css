@@ -142,3 +142,25 @@ body {
     cursor: pointer;
     accent-color: var(--btn-color, #003d8d); 
 }
+
+.btn-editar {
+    margin-top: 15px;
+    border-radius: 8px;
+    height: 25px;
+    width: 120px;
+    border: none;
+    box-shadow: 2px 3px 5px rgb(168, 168, 168);
+    transition: 0.2s;
+}
+
+.btn-editar:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.exluir-btn {
+    display: flex;
+    width: 350px;
+    height: 350px;
+    
+}

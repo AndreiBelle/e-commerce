@@ -6,8 +6,9 @@
 }
 
 body {
-    background-color: #ececec;
+    background-color: #f5f5f5;
     color: #5480be;
+    
 }
 
 .img-Logo {
@@ -173,4 +174,96 @@ body {
 .header-container img {
     display: flex;
     justify-content: left;
+}
+
+.produtos {
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card-produto {
+    position: relative; 
+    width: 350px; 
+    height: 350px; 
+    overflow: hidden; 
+    border-radius: 12px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    box-shadow: 8px 4px 5px rgb(124, 124, 124);
+    transition: 0.3s;
+}
+
+.img-produto {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+.img-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border: none;
+}
+
+.info-produto {
+    color: black;
+    position: relative; 
+    width: 100%;
+    z-index: 2; 
+    background-color: rgba(238, 247, 255, 0.7);
+    padding: 15px; 
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.container-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card-produto:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+.info-produto{
+    background-color: rgba(238, 247, 255, 0.9);
+}
+    
+}
+
+.excluir {
+    display: flex;
+    position: relative;
+    justify-content: right;
+    top: -220px;
+    margin-right: 15px;
+    z-index: 50;
+}
+
+.btn-excluir {
+    height: 25px;
+    width: 25px;
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(255, 210, 210);
+    transition: 0.3s;
+}
+
+.btn-excluir:hover {
+    cursor: pointer;
+    border: 1px solid rgb(143, 143, 143);
+    background-color: rgb(395, 100, 100);;
+    transform: scale(1.1);
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="../styles/editarUser.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    
+</head>
+<body>
+    <main class="container">
+        <form class="form-editar" id="editarForm">
+            <h1>Editar usuário!</h1>
+            <div class="form-group">
+                <label>Usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="text" id="email" name="usuario" required>                
+            </div>
+            <div id="input-adm" class="input-adm"></div>
+            <div class="btn">
+                <button type="submit" id="btn-salvar" class="btn-editar">Salvar</button>
+                <button type="button" id="btn-excluir" class="btn-excluir">Excluir</button>
+                <a id="btn-cancel" href="#">
+                <button type="button" class="btn-cancel">Cancelar</button>
+                </a>
+            </div>            
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../controllers/editarUser.js" defer></script>
+</body>
+</html>

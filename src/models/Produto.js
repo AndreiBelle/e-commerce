@@ -38,7 +38,7 @@ const GerenProdutos = {
 
     BuscarPorCategoria: async (categoriaClicada) => {
         try {
-            const resultado = await db.allDocs({ include_docs: true });
+            const resultado = await dbProdutos.allDocs({ include_docs: true });
             
             const produtosFiltrados = resultado.rows.filter(linha => {
                 const ficha = linha.doc;
@@ -51,6 +51,38 @@ const GerenProdutos = {
 
         } catch (erro) {
             console.error("Erro ao buscar produtos na categoria:", erro);
+            return []; 
+        }
+    },
+
+    BuscarPesquisa: async (valorDigitado) => {
+        try {
+            const resultado = await dbProdutos.allDocs({ include_docs: true });
+            
+            const produtosFiltrados = resultado.rows.filter(linha => {
+                const ficha = linha.doc;
+                
+                
+                if (ficha.tipo !== "produto") {
+                    return false;
+                }
+                
+                
+                const titulo = (ficha.titulo || "").toLowerCase();
+                const descricao = (ficha.descricao || "").toLowerCase();
+                const valorPesquisado = valorDigitado.toLowerCase();
+                
+                const tituloFiltro = titulo.includes(valorPesquisado);
+                
+                const descricaFiltro = descricao.includes(valorPesquisado);
+                
+                return tituloFiltro || descricaFiltro;
+            });
+
+            return produtosFiltrados.map(linha => linha.doc);
+
+        } catch (erro) {
+            console.error("Erro ao buscar produtos na pesquisa:", erro);
             return []; 
         }
     }

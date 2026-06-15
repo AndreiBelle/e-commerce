@@ -18,6 +18,15 @@ if (!isAdmin) {
 
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const abaSalva = sessionStorage.getItem("abaAberta");
+    if (abaSalva === "gerenciador") {
+        inicio.classList.add("hidden");
+        gerenciador.classList.remove("hidden");
+        sessionStorage.removeItem("abaAberta");
+    }
+});
+
 async function listarTodos() {
     try {
         const dados = await GerenUsuarios.listarUsuarios();
@@ -36,7 +45,7 @@ async function listarTodos() {
             estruturaHTML += `
             <div class="card-usuario">
                 <div class="img-user">
-                    <img src="../../public/perfil.png" style="height: 150px;">
+                    <img src="../../public/perfil.png" style="height: 150px;"></img>
                 </div>
                 <p>${user.usuario} | ${user._id}</p>
                 <div class="input-adm">
@@ -48,11 +57,25 @@ async function listarTodos() {
                            ${ehAdmin}>
                     <label for="adm_${user._id}">Esse usuário é um Administrador do sistema?</label>
                 </div>
+                <a class="link-editar" data-id="${user._id}" href="javascript:void(0)">
+                    <button id="btnEditar" class="btn-editar">Editar Usuário</button>
+                </a>
             </div>
             `;  
         });
 
         usuarios.insertAdjacentHTML('beforeend', estruturaHTML);
+
+        const btnEditar = document.querySelectorAll('.link-editar')
+
+        btnEditar.forEach(botao => {
+            botao.addEventListener('click', (evento) => {
+                event.preventDefault();
+                const idUsuario = botao.getAttribute('data-id');
+                sessionStorage.setItem("abaAberta", "gerenciador");
+                window.location.replace(`../views/editarUser.html?id=${idUsuario}`);
+    });
+});
 
     } catch (erro) {
         console.error("Erro ao listar usuários:", erro);
