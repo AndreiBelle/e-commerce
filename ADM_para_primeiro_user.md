@@ -2,6 +2,7 @@
 
 ## OBS: alterar o user@email.com para o e-mail que você utilizou ao cadastrar o seu usuário.
 
+```
 const db = new PouchDB('usuarios');
 db.get("user@email.com").then(function (doc) { 
     console.log("documento encontrado: ", doc)
@@ -12,3 +13,4 @@ db.get("user@email.com").then(function (doc) {
 }).catch(function(err) {
     console.log("erro na atualização>", err);
 })
+```
