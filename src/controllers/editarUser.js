@@ -123,7 +123,7 @@ formEditar.addEventListener("submit", atualizarUser);
 async function excluirUser() {
     const parametros = new URLSearchParams(window.location.search);
     const id = parametros.get('id');
-    const retorno = await modalExcluir();
+    const retorno = await modalExcluir("usuário");
 
     if (retorno.isConfirmed === true) {
         try {
@@ -134,7 +134,7 @@ async function excluirUser() {
 
             setTimeout(() => {
                 window.location.replace("../views/config.html")
-            }, 1200);
+            }, 800);
         } else {
             toast("Usuário não encontrado", "erro");
         } 

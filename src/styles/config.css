@@ -14,13 +14,9 @@
 
 body {
     color: var(--cor-letras, #334155); 
-    
     background-color: var(--cor-fundo, #f4f7fc); 
-    
     display: flex; 
-    
     height: 100vh; 
-    
     overflow: hidden; 
 }
 
@@ -93,6 +89,7 @@ body {
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02); 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    columns: 2;
 }
 
 
@@ -110,10 +107,6 @@ body {
     margin-bottom: 20px; 
     padding-bottom: 15px; 
     border-bottom: 1px dashed #cbd5e1; 
-}
-
-.card-usuario {
-    columns: 2;
 }
 
 .destaque-id {

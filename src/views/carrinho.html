@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho - Tem de Tudo!</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/carrinho.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+
+    <link rel="icon" type="image/svg+xml" href="../../public/logo-ico.svg">
+
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="img-Logo">
+            <a href="./index.html">
+                <img src="../../public/logo.png" style="height: 100px;">
+            </a>
+        </div>
+        <div class="nav-inicio">
+            <h1 class="titulo">Meu Carrinho de Compras</h1>
+            <a href="./index.html" class="btn-inicio">← Voltar para a loja</a>
+        </div>
+    </div>
+
+    <div class="container-carrinho" id="lista-carrinho">
+        </div>
+
+    <div class="resumo-carrinho">
+        <h2>Total: <span id="total-carrinho">R$ 0.00</span></h2>
+        <button id="btn-finalizar-carrinho" class="btn-comprar">Finalizar Compra</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../controllers/CarrinhoController.js" defer></script>
+</body>
+</html>

@@ -85,6 +85,21 @@ const GerenProdutos = {
             console.error("Erro ao buscar produtos na pesquisa:", erro);
             return []; 
         }
+    },
+
+    excluirProduto: async (id) => {
+        try {
+           const dados = await dbProdutos.get(id);
+
+           await dbProdutos.remove(dados);
+           
+           return { sucesso: true, mensagem: "Produtos excluído com sucesso!" };
+
+        } catch (err) {
+        console.error("Erro ao remover produto ",err)
+        console.log(id);
+        return {sucesse: false, mensagem: "Falha ao excluir produto"}
+        }
     }
 };
 

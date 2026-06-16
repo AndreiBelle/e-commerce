@@ -1,6 +1,7 @@
 import GerenProdutos from "../models/Produto.js";
 import { toast } from "../utils/notificacao.js";
 
+
 const isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
 
 if (!isAdmin) {
@@ -27,9 +28,32 @@ async function CadastrarProduto(event) {
     try {
         const resultado = await GerenProdutos.CadastrarProduto(titulo, valor, descricao, imagemUrl, categoria);
 
+
+
         if (resultado.ok) {
             toast("Produto cadastrado com sucesso!", "sucesso");
-            // formulario.reset();
+
+
+            const confirmacao = await Swal.fire({
+            title: 'Produto cadastrado!',
+            text: `Deseja cadastrar mais um anúncio de produto?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#28a745',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Não'
+            });
+
+            if (confirmacao.isConfirmed) {
+            setTimeout(() => {
+                window.location.reload();
+            }, 800);
+            } else {
+            setTimeout(() => {
+                window.location.replace("../views/index.html")
+            }, 800);
+            }
         } else {
             toast(resultado.mensagem, "erro");
         }

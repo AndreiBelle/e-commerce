@@ -57,6 +57,7 @@ function gerenciarEstadoLogin() {
 function fazerLogout() {
     localStorage.removeItem('usuarioLogado');
     localStorage.removeItem('isAdmin');
+    localStorage.removeItem('carrinho');
     window.location.reload();
 
 }
