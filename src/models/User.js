@@ -3,16 +3,33 @@ import { db } from "../database/db.js";
 const GerenUsuarios = {
     Cadastrar: async (usuario, email, senha) => {
         try {
-            const user = {
-            _id: email.toLowerCase(),
-            usuario: usuario,
-            senha: senha,
-            isAdmin: false
-        }
-        
-        await db.put(user)
+            const consultaEmail = await db.get(email.toLowerCase()).catch(() => null);
 
-        return { sucesso: true, mensagem: "Usuario cadastrado"}
+            if (consultaEmail) {
+                return {sucesso : false, mensagem: "Já existe um usuário com esse nome de usuário OU esse e-mail!"}
+            }
+                const consultaUser = await db.find({
+                    selector: {
+                        usuario: usuario
+                    }
+                })
+                if (consultaUser.docs.length > 0) {
+                    return {sucesso : false, mensagem: "Já existe um usuário com esse nome de usuário OU esse e-mail!"}
+
+                }
+                    const user = {
+                        _id: email.toLowerCase(),
+                        usuario: usuario,
+                        senha: senha,
+                        isAdmin: false
+                    }
+
+                    await db.put(user)
+
+                    return { sucesso: true, mensagem: "Usuario cadastrado"}
+                
+            
+
         } catch (err) {
             console.error("Erro ao cadastrar: "+ err)
             throw new Error("Falha no banco de dados")

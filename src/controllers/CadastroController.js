@@ -12,9 +12,18 @@ async function Cadastrar(event) {
     const senha = document.getElementById("senha").value;
 
     try {
-        await GerenUsuarios.Cadastrar(usuario, email, senha);
-        toast("Salvo com sucesso", "sucesso");
-        window.location.replace("../views/login.html")
+        const resposta = await GerenUsuarios.Cadastrar(usuario, email, senha);
+
+        if (resposta.sucesso === true ) {
+            toast("Salvo com sucesso", "sucesso");
+            setTimeout(() => {
+                window.location.replace("../views/login.html")
+            },1200)
+            
+        } else {
+            toast("Erro!: "+resposta.mensagem, "erro")
+        }
+        
     } catch (err) {
         toast("Erro ao salvar: " +err.message, "erro");
     }
